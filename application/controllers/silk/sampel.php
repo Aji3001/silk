@@ -50,7 +50,7 @@ class Sampel extends CI_Controller{
 
 	function delete($id){
         if(empty($id)){
-            redirect('kontak');
+            redirect('silk/sampel');
         }else{
             $delete =  $this->curl->simple_delete($this->BASE_API.'/product', array('id'=>$id), array(CURLOPT_BUFFERSIZE => 10)); 
             if($delete)
@@ -60,7 +60,7 @@ class Sampel extends CI_Controller{
             {
                $this->session->set_flashdata('hasil','Delete Data Gagal');
             }
-            redirect('kontak');
+            redirect('silk/sampel');
         }
     }
 
