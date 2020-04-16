@@ -30,9 +30,9 @@ class Sampel extends CI_Controller{
 		if(isset($_POST['submit'])){
             $data = array(
                 'product_id'       =>  $this->input->post('id'),
-                // 'name'      =>  $this->input->post('nama'),
-                // 'price'      =>  $this->input->post('harga'),
-                // 'image'      =>  $this->input->post('gambar'),
+                'name'      =>  $this->input->post('nama'),
+                'price'      =>  $this->input->post('harga'),
+                'image'      =>  $this->input->post('gambar'),
                 'description'=>  $this->input->post('deskripsi'));
             $insert =  $this->curl->simple_post($this->BASE_API.'/product', $data, array(CURLOPT_BUFFERSIZE => 10)); 
             if($insert)

@@ -22,9 +22,9 @@ class product extends REST_Controller {
     function index_post() {
         $data = array(
             'product_id'       =>  $this->input->post('product_id'),
-            // 'name'      =>  $this->input->post('nama'),
-            // 'price'      =>  $this->input->post('harga'),
-            // 'image'      =>  $this->input->post('gambar'),
+            'name'      =>  $this->input->post('nama'),
+            'price'      =>  $this->input->post('harga'),
+            'image'      =>  $this->input->post('gambar'),
             'description'=>  $this->input->post('deskripsi'));
         $insert = $this->db->insert('products', $data);
         if ($insert) {
